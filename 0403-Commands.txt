@@ -1,0 +1,334 @@
+The basic command of OS (Windows)
+---------------------------------
+There are two types of commands/instructions:
+
+  1. Internal commands - Commands which are the part of OS and always be there.
+
+  			e.g dir, copy, type, date, time, cls, ren, vol, ver, path
+			    del, rd, cd, md etc
+  2. External commands - Command which may or may not be a part of the OS and they
+			 are exists in the form of executables program file or 			 software.
+
+				[In Win OS, .exe, .bat, .cmd, .com files are known
+				 as executable/runnable programs].
+			Example: calc.exe, nmotepad.exe, mspaint.exe, format.com, 
+				 tree.com, diskpart.exe and many more.
+
+The terminal/command prompt/shell/console
+-----------------------------------------
+In order to operate the OS, we have to issue some commands either using GUI (Graphical User Interface) or CLI (Command Line Interface).
+   1. GUI - We uses mouse, touch screens and sometimes keyboard to issue commands.
+   2. CLI - We must have to type the command at terminal/console/command prompt.
+
+NOTE that the command of operating system are known as Application Programming Interface (API) of OS.
+
+To start the command prompt press Win Key + R and type - "cmd" command name. The "cmd" is an external command. (Or Start Menu + Run + type "cmd" and press Enter
+                         Or Create Shortcut/link)
+
+OR, open command prompt via File Explorer (My Computer). Type "cmd" at location bar and press enter.
+
+To open file explorer from the command prompt, type "start path-of-your-folder".
+ For example,
+    >start .    Open file explorer of current directory
+    >start c:\windows  - for windows dir
+
+				 
+1. md or mkdir - create a directory
+
+   Syntax:  md  <<dir-name>> 
+
+2. cd - change directory
+
+   Syntax: cd <<dir-name>>
+
+3. rd - Remove directory
+
+   Syntax:  rd <<dir-name>>
+
+4. dir - Directory and files listing
+
+Example:
+
+c:\users\abc>_    <--- This is current directory
+            >cd\  <--- To change to root directory 
+c:\>md Work
+c:\>dir   
+   >cd Work   
+c:\Work>dir
+    <dir>  .     <--- Current directory symbol
+    <dir>  ..    <--- Parent directory symbol
+c:\Work>md Office
+c:\Work>md Home
+c:\work>dir
+c:\work>tree     -- tree is an external command to show directories hierarchy 
+c:\Work>cd Office
+c:\Work\Office>md C
+               md Java
+              >Dir
+Now, create Day1 and Day2 folders/directories into Home folder
+c:\Work\Office>cd ..   -- Back to parent
+c:\Work>Cd Home
+c:\Work\Home>md Day1
+             md Day2
+c:\Work\Home>dir
+c:\Work\home>cd..
+c:\work>cd..
+c:\>tree Work
+
+RD removes empty directory,
+c:\>rd Work  <-- Can't remove because not empty
+c:\>cd Work
+c:\Work>cd Office
+c:\Work\Office>rd C
+              >dir
+              >rd Java
+              >cd..
+c:\Work>rd Office
+       >dir
+
+Use fully or relative paths for md, cd, and rd operations:
+c:\>rd c:\Work\Office\C
+c:\>rd c:\Work\Office\Java
+c:\>rd c:\Work\Home\day1
+c:\>rd c:\Work\Home\day2
+c:\>rd c:\Work\Home
+c:\>rd c:\Work\Office
+c:\>rd c:\Work
+
+Create,
+c:\>md Work
+c:\>md Work\Office
+c:\>md Work\Office\C
+c:\>md Work\Office\Java
+c:\>md Work\Home
+c:\>md Work\Home\Day1
+c:\>md Work\Home\Day2
+c:\>tree work
+
+Change dirs,
+c:\>cd Work\Office\Java   OR c:\>cd C:\Work\Office\Java
+c:\Work\Office\Java>  
+
+Enter into Day2
+c:\Work\Office\Java>cd c:\Work\Home\Day2   
+ OR
+c:\Work\Office\Java>cd \Work\Home\Day2   
+ OR
+c:\Work\Office\Java>cd ..\..\Home\Day2
+
+
+5. Creating files -- There are numbers of ways to create files. You can use notepad, paint brush, excel, word and many more apps to create files.
+
+1. create hello.txt (via notepad) into \Work\Home\Day1
+2. Create pic.png (via paint brush) into \Work\Home\Day2
+use tree/f <<dirName>> to list folders along with file.
+c:\>tree/f Work
+c:\Work\Home\Day1>tree/f ..\..\. 
+
+3. Set "C" as current directory and create "sample.c" file
+c:\>cd Work\Office\C
+c:\Work\Office\c>notepad sample.c  <--- Notepad will create sample.c in current dir.
+                >notepad sample.java 
+                >notepad p1        <-- p1.txt file (extension .txt)
+
+4. We can use "copy con <<filename>" command to create a text files.
+
+c:\Work\Office\C>copy con help.txt
+Type here something.... and 
+..... to save press F6 + Enter (or Ctrl+Z and Enter)
+^Z
+                 >copy con p1.dat
+      ..... ^Z
+
+ >dir
+
+NOTE: The "copy con" command is used to create files on learning basis, we should use suitable editors like notepad, notepad++, write or word software to manipulate the file content.
+
+5. type <<filename1>> <<filename2>> .... - To list the content of file
+
+c:\Work>copy con p1
+Firs file ^z
+c:\Work>copy con p2
+Second file ^z
+c:\Work>copy con p3
+Third file ^z
+
+c:\Work>type p1
+       >type p2 p1 p2 p1 p3 p1 p1 p2 p1
+
+Copy the content of p1, p2 and p3 to p4.txt
+c:\work>type p1 p2 p3 > p4.txt     <--- > greater sign is known as re-direction output
+c:\work>dir > d-list
+c:\Work>type d-list
+       >dir
+c:\Work>tree/f > t-list
+c:\work>tree/f /a > t-list.1   <--- Use ASCII char
+       >dir
+
+6. copy <<source-file>> <<new-file>> - Copy a file
+
+c:\work>copy con k1.txt
+sadasds
+^Z
+c:\work>copy k1.txt k2.txt
+       >dir
+       >copy k1.txt help.abc
+       >dir
+If "new-file" name is already exists then this command display overwrite? message
+
+7. ren <<existing-fileo-or-folder>> <<new-name>> - Change/rename the file/directory
+
+ c:\work>ren k1.txt keyboard.usa
+        >dir
+        >md Test
+        >dir
+        >ren Test Best
+        >dir
+8. del <<filename>> - delete a file if it exists
+   del <<foldername>> - delete all files in a given folder
+   Note: You can't undo this action so use this command carefully
+   c:\work>del k2.txt
+          >dir
+          
+We may use the "Path" to perform file operations with type, copy, del and ren commands:
+
+1. create a file at "Day2" folder named "just.c"
+c:\>copy con c:\Work\Home\Day2\just.c
+This is the use of path...^Z
+
+2. copy the just.c file into "C" folder
+c:\>copy c:\Work\Home\Day2\just.c  c:\Work\Office\C   <-- if file name is not given 
+							  at destination folder then
+							  copy will be on same file 							  name.
+Copy just.c into "C" with different file name "first.c"
+c:\>copy \Work\Home\Day2\just.c \Work\Office\c\first.c
+
+Copy the first.c to Work dir.
+
+c:\Work>copy C:\Work\Office\C\first.c     <---- If destination folder is not specified
+						then current directory will be consider
+						as destination folder.
+Or
+
+c:\Work\Office\C>copy first.c c:\Work
+OR
+c:\Work\Office\C>copy first.c ..\..\
+c:\Work\Office\C>copy first.c ..\..\sample.c
+
+Multiple file copy into a single file,
+copy file1+file2+.....  new-file
+
+>copy p1+p2+p3.txt+hello.dat  all.txt
+>dir
+>type all.txt
+
+Rename the file,
+c:\>ren \Work\Office\C\sample.c sample.d
+c:\>tree/f Work
+
+
+Delete a file,
+c:\>del c:\Work\Office\C\sample.d
+c:\>tree/f Work
+
+
+10. cls - clear the screen
+11. vol - volume label of device
+12. ver - version of os
+13. Date - get / set the system date
+14. time - get /set the system date
+
+15. help - To list basic command list of the OS (internal as well as external) and also
+           display help of each command. e.g help dir   or help copy
+ 					Or command-name /? e.g dir /?
+
+
+* and ? - Wild card characters - to create a group of files and folders
+-----------------------------------------------------------------------
+To perform dir, copy, ren and del actions on one or more or certain group of files, we have to use wild card characters.
+
+* - It replaces any character in file & extension
+? - It replaces a char in file & extension.
+
+Note: Assume that we've number of files with different name & extension
+
+>dir ?     <- It displays single letter files or dirs
+>dir ??    <- It displays two or one letter files or dirs
+>dir ?.*   <- It displays single letter files with/without any extension
+>dir a*.*  <- begins with a letter having any extension
+>dir t*.exe <-- begins with t and .exe extension
+>dir *.txt  <-- all files having .txt extension
+>dir *.?x   <-- Any file whose extension is two char long and second char is x
+>dir *.*    <-- all 
+
+
+Group copy,
+1. Copy all .txt files to new extension .efg
+>copy *.txt *.efg
+2. copy all file whose name begins with 't' letter to 'k' in new file names.
+>copy t*.* k*.*
+3. copy all .doc files to "Java" folder
+c:\Work>copy *.doc Office\Java
+Or
+c:\>copy  c:\Work\*.doc c:\Work\Office\Java
+4. copy all files of "Work" to "Day1"
+c:\Work>copy *.* Home\Day1
+
+Group Rename ,
+
+1. Change .txt extension with .bbb
+>ren *.txt *.bbb
+2. Change file names
+>ren ?e??.* ?7??.*    change second letter 'e' with '7'
+
+Group deletion,
+1. delete .txt files
+>del *.txt
+2. delete all files whose second char is '7'
+>del ?7*.*
+3. del all files
+>del *.*    <--- A confirmation will be displayed
+
+Dir and its switches (extra data to dir command)
+>dir /p  <-- list with pause
+>dir /w  <-- list in wide format
+>dir /w/p  Both, wide format and pause if files count exceed the screenful.
+>dir /b  <-- bare format (list file names vertically)
+>dir /od <-- order by date in ascending
+>dir /o-d <-- order by date in descending 
+>dir /os <- order by size
+>dir /o-s <-- order by size desc
+>dir /s  <-- all files in sub directories
+>dir *.txt /s/p
+>dir /? to display help
+
+attrib command to set file & dir attributes
+--------------------------------------------
+A - archive
+S - System
+H - Hidden
+R - Read only
+
+c:\Work>copy con p1.txt
+sssd^z
+>dir
+>attrib +h p1.txt   <-- to set attribute use +AttrChar and remove -AttrChar
+>dir   <-- wont' show a file
+>dir /ah   <-- To show hidden file
+>dir /as   <-- To show system file
+>attrib -h p1.txt  
+>dir
+>attrib   <-- list files along with attributes
+> attrib +h +r +s p1.txt  <-- set multiple attributes
+>attrib
+>attrib -h -r -s p1.txt
+>attrib +h *.txt  <-- hide group files
+
+
+
+
+
+
+
+
+

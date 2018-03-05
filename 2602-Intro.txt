@@ -1,0 +1,326 @@
+ Operating System - What is an OS?  
+-----------------
+
+  The OS is a kind of system software that  activate the computer hardware,
+  initialize them and allow them to interect with software.
+
+
+  The OS is also a platform or framework in which developers/programmers 
+  design the programs, install or deploy the programs and execute these
+  programs on behalf of the developers.
+
+
+  The OS is very low-level platform. It uses "binary numbers system" for
+  data & instructions.
+
+
+  The operating system has following major tasks:
+
+     1. To run the programm -- "process management". A running program is called
+        a "process".
+
+     2. To provide memory to the running programs (or processes). This service
+	is known as "Memory Management".
+
+     3. To provide different hardware services to the programs or processes.
+
+	For example,  To use the harddisk, monitor, printer, mouse, RAM, ROM and many
+			more.
+
+        The OS expose the services to the developers & users in the form of "commands"
+        or Application Programming Interface (API) -- also known as the "library".
+
+        It means OS has a toolbox or library that includes thousands of different
+  	different tools or functions or APIs. ( tools or functions or APIs means
+	ready to use small programs)
+
+ Language of Hardware & Operating System
+ ----------------------------------------
+
+ What is the language of Hardware?
+
+    Ans - Short answer is "Binary number system" is the language of Hardware.
+
+    As we know that computer pheripherals are electronics & electricals. They uses
+    electric state or pulse to represent the data/value/command/instruction.
+    There are two electical state -- On and Off -- just like 1 and 0 in binary number
+    system.
+
+       For instance, to delete a file, we need to pass "1000001" instruction to the OS
+		     which in form of binary string (series of 1s and 0s) but in case
+		     of human interaction, we would like to use "delete" or "remove"
+		     like command name.
+
+		User Commands		Binary instructions
+		remove			1000001
+		create			1000011
+
+ 	So, OS provide symbolic name for the instructions and we will call these 
+	instructions as "APIs" or "Library".
+
+ That means the language of OS and Hardware is "binary number system". Computer does everything with help of binary numbers.
+
+What is binary number system?
+----------------------------
+
+ Generally, we, human, uses "decimal number system". Decimal number system has base of 
+ 10.
+
+       3  2   1    0
+..   10  10  10  10
+ 
+    1000 100 10  1   
+
+  124
+         2             1             0
+ = 1 x 10   +   2 x  10    + 4  x 10
+
+In binary number system, it has base of 2.
+     5   4   3   2   1   0
+... 2   2   2   2   2   2
+
+    32  16   8  4   2  1
+
+The OS perform complex translation of binaries to decimals and vice-versa (decimals to binaries) continiously.
+
+
+How OS perform such translations ( Decimal to Binary and Binary to Decimal)?
+--------------
+
+ OS uses following mathematic steps:
+
+1. Decimal to binary
+
+   17 decimal =   10001            
+
+1024 512 256 128 64 32  16   8  4   2  1
+                         x   x  x   x  x
+                         1   0  0   0  1
+                        ------------------
+                        16 + 0 + 0 + 0 + 1 = 17
+
+
+ 2| 17 | Remainder/Modulo (Shesh)
+ -|----|----
+ 2| 8  | 1
+ -|----|----
+ 2| 4  | 0
+ -|----|----
+ 2| 2  | 0
+ -|----|----
+ 2| 1  | 0
+ -|----|----
+ 2| 0  | 1
+ -|----|----   ^
+               | Write remainder from bottom to top in left to right direction
+
+
+2. Binary to decimal
+
+  100001 = 33
+
+ 
+10 | 100001 |
+---|--------|
+10 | 10000  | 1
+---|--------|
+10 | 1000   | 0
+---|--------|
+10 | 100    | 0
+---|--------|
+10 | 10     | 0
+---|--------|
+10 | 1      | 0
+---|--------|
+10 | 0      | 1
+
+ 
+How binary number is used to save the electrical pulse - on or off?
+
+Computer memory is made up of electronics registers and each register is 8 division
+box.
+   7    6    5    4    3    2   1    0     = 8 division
+ |----|----|----|----|----|---|----|----|
+ |    |    |    |    |    |   |    |    |
+ |----|----|----|----|----|---|----|----|
+
+ Each box/division save either on or off state of electrical pulse and we will use metaphore 1 for on and 0 for off for our understanding. Each box or division represent a binary digit hence each box is also known as "bits -- (Bi)nary Digi(ts)".
+
+ So,
+
+ 0000 0000  means = 0 decimal value
+ 0000 0001  means = 1 value
+ 1111 1111  means = 255 value
+ 1000 0000  means = 128
+                                                       
+   
+ To measure the memory 1 byte = 8 bits = 1 register
+
+ 1024 bytes = 1 Kilo Byte (KB)
+ 1024 KB = 1 Mega Byte (MB)
+ 1024 MB = 1 Giga Byte (GB)
+ 1024 GB = 1 Tera Byte (TB)
+
+ 2 bytes = 1 Nibble
+ 4 bytes = 1 Word
+
+What is software?
+-------------------
+
+  It is a collection of related programs.
+
+  There are three major categories of software:
+	1. System Software. eg. Operating Systems
+	2. Application Software. e.g. Word, Excel, Accounting, Paint brush, Drawing,
+					Media etc
+	3. Programming or Application Development Software. e.g. C,C++, Java etc
+
+
+  Name the operating systems exists today.
+   ----------------------
+   Windows from Microsoft Corp, USA
+   Linux from open source community
+   Unix from beckerly and other companies
+   MacOS from Apple Inc, USA  
+	
+What is an open source?
+
+   An "open source" is a way to design/develop the software that anyone can use it, or
+   modify it or distribute under the "open source agreement". Open source doesn't mean
+   free software.
+
+   For example, Linus Torwald is the developer who develop the "Linux" OS in early 80s    under GNU (Not Unix) (Linux is looks a like Unix but it is not a copy of Unix).
+
+   There are thounsand of software under GNU & open source licences. We will use GNU C    compiler/language called (GCC compiler) to develop C and G++ compiler for C++ 
+   programming.
+
+   Java platforms are example of open source.
+
+   NetFramework and C# and ASP.NET are example of open source.
+
+   PHP, MySql are example of open source.
+
+   Destro of Linux OS like - UBuntu, Debian, Cento, RedHat are example of open source.
+
+The Operating System and File system
+-------------------------------------
+
+Operating System software generally copied into the "Harddisk" - a secondary storage medium.
+
+There are two types of storage devices (Memory Devices):
+  1. Primary memory device.
+
+     This device is known as "RAM - Random Access Memory".
+
+     RAM is an addressable memory. Each register/byte is given a unique integral 
+     id (number) which is called "address".
+
+|--------------| ....                  32
+|              | 4000400300   4 GB  = 2
+|--------------| 
+|              | ....
+|--------------| 
+|              | ....
+|--------------| 
+|              | 10001
+|--------------| 
+|              | 10000
+|--------------| 
+|              | .....
+|--------------| 
+|              | 1                    address
+|--------------|           
+|              | 0  (byte number 0 )  address
+|--------------| 
+
+ The OS format the RAM chip and make it addressable at the time of "booting".
+
+ What is "booting"?
+   To boot means to start to run the operating system and the OS activate 
+   required hardware.
+
+   When we switch on the computer system and immediately the OS software from the
+   Hardisk will be started running and this process is called "booting process".
+
+ Content of RAM or primary memory will be erased or removed as soon as the associated
+ or concern program is stopped or even OS is shuts down.
+
+ To store data permanently, we must have to use Seconday Storages like - Hard Disk,
+ CDs, DVDs, Pen, ZIP, Magnetic Tape etc.
+ 
+ Seconday Storage mediums are not "addressable" instead they uses "File System"  software to represent the storage oriented actions -- to save, to read, to delete, and
+ so on.
+
+ File Systems
+ ------------
+ This is a very important service of the operating system and it allow us to use the
+ Seconday storage devices in the form of "directories (folders)" and files.
+
+ There are different file systems including,
+   1. File Allocation Table (FAT)  - older version of Windows 
+   2. File Allocation Table 32 FAT32 - older version of windows but it allows max
+						4 GB of disk area.
+   3. NTFS Network File System - Currently all Win OS uses this software and have no
+					limitations.
+ The "Format" command of the operating system transfer "File System" software from
+ harddisk to Pen or another harddisk or CDs, or DVDs.
+
+ The "File System" create a root directory when you format the disk or device.
+
+ The \  (backslash) is defined as "root" directory. 
+
+ The file system also uses "Volume Label" to name the device and also allows on Windows
+ os to define a "Drive letter" e.g E, F G, C, D etc
+
+ c:\  
+ ^ ^
+ | |--------- Root directory
+ |
+ Drive
+ Letter
+ |
+ | |-------- Root directory
+ V V
+ E:\
+ 
+      |---------------- Directory
+      V
+ c:\Windows\System32 <--- Sub Directory
+ ^ ^       ^      
+ | |       |--------------- Directory separator
+ | |----- Root directory 
+ |
+Drive
+LEtter
+ 
+In Linux, there is a "ExtFS" file system and it do not support drive letter instead we've to use "name or volume name" but there is a root directory.
+  e.g    In linux,
+    
+             \home\download
+        or
+          \media\pendrive\sample
+          \cdrom\sample
+
+What is a file?
+ 
+   It represents the address or location on secondary storage of the data.
+
+ Basically, file is also an address for your data onto the disk and similarly, the folder/directory is also a location of another folder or file.
+
+ For example,  C:\csnet\Rolin\Info\sample.txt
+
+               is called "Path" and it describes the address of your data on the disk.
+
+NOTE: Whenever you format the disk, the OS will re-create a root each time. So you will lose older/previous root and rest other information.
+
+
+Best practice to save your data onto the disk
+----------------------------------------------
+Always create your own directory/folder at root of your disk and save your work in the form of files/folders.
+
+Never create too many folders or files directly at root. Keep root directories/files list small.
+
+At root, we've some system and important folders and files so don't delete or rename those files/folders which donot belongs to us.
+
+
+
